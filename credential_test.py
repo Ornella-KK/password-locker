@@ -34,7 +34,7 @@ class TestCredential(unittest.TestCase):
         test_credential = Credential("4556")
         test_credential.save_credential()
 
-        credential_exists = Credential.credential_list("4556")
+        credential_exists = Credential.credential_exist("4556")
         self.assertTrue(credential_exists)
 
     def test_display_all_credential(self):
