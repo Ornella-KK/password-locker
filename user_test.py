@@ -13,7 +13,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_user.user_name,"Ornella")
     
     def test_save_user(self):
-        self.new_user.save_contact()
+        self.new_user.save_user()
         self.assertEqual(len(User.user_list),1)
 
     def tearDown(self):
@@ -21,6 +21,20 @@ class TestUser(unittest.TestCase):
         tearDown method that does clean up after each test case has run.
         '''
         User.user_list = []
+
+    def test_save_multiple_user(self):
+        self.new_user.save_user()
+        test_user = User("user")
+        test_user.save_user()
+        self.assertEqual(len(User.user_list),2)
+
+    def test_delete_contact(self):
+        self.new_user.save_user()
+        test_user = User("user")
+        test_user.save_user()
+
+        self.new_user.delete_user() #deleting a user object
+        self.assertEqual(len(User.user_list),1)
 
 
 if __name__ == '__main__':
