@@ -20,3 +20,11 @@ class User:
                 return True
             else:
                 return False
+
+    @classmethod
+    def display_user(cls):
+        '''
+        method that returns the user list
+        '''
+        return cls.user_list
+        
