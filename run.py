@@ -26,4 +26,32 @@ def display_credential():
 
 def main():
     print("Hello, Welcome to your password-locker app. Please sign up and login")
-    
+    print('\n')
+
+    print("Username...")
+    u_name = input()
+
+    print("Password...")
+    p_word = input()
+
+    print('\n')
+    print("Login now")
+
+    print('\n')
+    print("Username")
+    U_name = input()
+
+    print("Password")
+    P_word = input()
+
+    if U_name!=u_name and P_word != p_word:
+        print("Wrong username or password")
+    else:
+        print(f"{U_name}...{P_word}") 
+
+
+if __name__ == '__main__':
+
+    main()
+
+
