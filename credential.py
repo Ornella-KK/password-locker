@@ -6,3 +6,18 @@ class Credential:
 
     def save_credential(self):
         Credential.credential_list.append(self)
+
+    def delete_contact(self):
+        Credential.credential_list.remove(self)
+
+    @classmethod
+    def contact_exist(cls,password):
+        for credential in cls.credential_list:
+            if credential.password == password:
+                return True
+            else:
+                return False
+    
+    @classmethod
+    def display_credential(cls):
+        return cls.credential_list
