@@ -44,10 +44,16 @@ def main():
     print("Password")
     P_word = input()
 
-    if U_name!=u_name and P_word != p_word:
+    if U_name!=u_name and P_word != p_word:#error handling
         print("Wrong username or password")
     else:
         print(f"{U_name}...{P_word}") 
+
+        print('\n')
+        print("Use these short codes:np- new password, del - delete password, dup-display passwords and accounts, ex-exit")
+        short_codes=input().lower()
+
+    
 
 
 if __name__ == '__main__':
