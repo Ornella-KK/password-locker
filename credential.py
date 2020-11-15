@@ -7,11 +7,11 @@ class Credential:
     def save_credential(self):
         Credential.credential_list.append(self)
 
-    def delete_contact(self):
+    def delete_credential(self):
         Credential.credential_list.remove(self)
 
     @classmethod
-    def contact_exist(cls,password):
+    def credential_exist(cls,password):
         for credential in cls.credential_list:
             if credential.password == password:
                 return True
