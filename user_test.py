@@ -44,6 +44,9 @@ class TestUser(unittest.TestCase):
         user_exists = User.user_exist("Ornella")
         self.assertTrue(user_exists)
 
+    def test_display_all_user(self):
+        self.assertEqual(User.display_user(),User.user_list)
+
 
 if __name__ == '__main__':
     unittest.main()
