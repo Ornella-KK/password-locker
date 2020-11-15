@@ -49,9 +49,9 @@ def main():
     else:
         print(f"{U_name}...{P_word}") 
 
-        print('\n')
-        print("Use these short codes:np- new password, del - delete password, dup-display passwords and accounts, ex-exit")
-        short_codes=input().lower()
+    print('\n')
+    print("Use these short codes:np- new password, del - delete password, dup-display passwords and accounts, ex-exit")
+    short_codes=input().lower()
 
     
 
