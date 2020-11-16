@@ -51,41 +51,65 @@ def main():
         print(f"{U_name}...{P_word}") 
 
     print('\n')
-    print("Use these short codes:np- new password, gp-get password from us, del - delete password, dup-display passwords and accounts, ex-exit")
-    short_codes=input().lower()
+    while True:
+        print("Use these short codes:np- new password, gp-get password from us, del - delete password, dup-display passwords and accounts, ex-exit")
+        short_codes=input().lower()
 
-    if short_codes == 'np':
-        print("New Password")
-        print("-"*7)
+        if short_codes == 'np':
+            print("New Password")
+            print("-"*7)
 
-        print("Account...")
-        user_name = input()
+            print("Account...")
+            user_name = input()
 
-        print("Password")
-        password = input()
+            print("Password")
+            password = input()
 
-        save_users(create_user(user_name))
-        save_credential(create_credential(password))
-        print('\n')
-        print(f"New Password {password} for {user_name} crated")
-        print('\n')
+            save_users(create_user(user_name))
+            save_credential(create_credential(password))
+            print('\n')
+            print(f"New Password {password} for {user_name} crated")
+            print('\n')
+        
 
-    elif short_codes == 'gp':
-        print("Get Password")
-        print("-"*7)
+        elif short_codes == 'gp':
+            print("Get Password")
+            print("-"*7)
 
-        print("Account...")
-        user_name = input()
+            print("Account...")
+            user_name = input()
 
-        print("Password")
-        random_number= random.randint(0,5)
-        password = random_number, random_number, random_number, random_number
+            print("Password")
+            random_number= random.randint(0,5)
+            password = random_number, random_number, random_number, random_number
 
-        save_users(create_user(user_name))
-        save_credential(create_credential(password))
-        print('\n')
-        print(f"Password {password} for {user_name} created")
-        print('\n')
+            save_users(create_user(user_name))
+            save_credential(create_credential(password))
+            print('\n')
+            print(f"Password {password} for {user_name} created")
+            print('\n')
+
+        elif short_codes == 'dup':
+            if display_user():
+                print("Here is a list of all your account and their passwords")
+                print('\n')
+
+                for user in display_user():
+                    print(f"{user.user_name} {credential.password}")
+                    print('\n')
+
+            else:
+                print('\n')
+                print("You don't seem to have any contacts")
+                print('\n')
+    
+
+    
+
+            
+        
+
+
 
     
 
