@@ -13,6 +13,10 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_user.user_name,"Ornella")
     
     def test_save_user(self):
+        '''
+        test_save_user test case to test if the user object is saved into
+         the user list
+        '''
         self.new_user.save_user()
         self.assertEqual(len(User.user_list),1)
 
@@ -23,12 +27,19 @@ class TestUser(unittest.TestCase):
         User.user_list = []
 
     def test_save_multiple_user(self):
+        '''
+            test_save_multiple_user to check if we can save multiple user
+            objects to our user_list
+            '''
         self.new_user.save_user()
         test_user = User("user")
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
 
-    def test_delete_contact(self):
+    def test_delete_user(self):
+        '''
+            test_delete_user to test if we can remove a user from our user list
+            '''
         self.new_user.save_user()
         test_user = User("user")
         test_user.save_user()
@@ -45,6 +56,9 @@ class TestUser(unittest.TestCase):
         self.assertTrue(user_exists)
 
     def test_display_all_user(self):
+         '''
+        method that returns a list of all users saved
+        '''
         self.assertEqual(User.display_user(),User.user_list)
 
 
