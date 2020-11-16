@@ -4,53 +4,81 @@ from credential import Credential
 import random
 
 def create_user(user_name):
+    '''
+    Function to create a new user
+    '''
     new_user = User(user_name)
     return new_user
 def create_credential(password):
+    '''
+    Function to create a new credential
+    '''
     new_credential = Credential(password)
     return new_credential
 
 def save_users(user):
+    '''
+    Function to save user
+    '''
     user.save_user()
 def save_credential(credential):
+    '''
+    Function to save credential
+    '''
     credential.save_credential()
 
 def del_user(user):
+    '''
+    Function to delete a user
+    '''
     user.delete_user()
 def del_credential(credential):
+    '''
+    Function to delete a credential
+    '''
     credential.delete_credential()
 
 def display_user():
+    '''
+    Function that returns all the saved user
+    '''
     return User.display_user()
 def display_credential():
+    '''
+    Function that returns all the saved user
+    '''
     return Credential.display_credential()
 
 def main():
     print("Hello, Welcome to your password-locker app. Please sign up and login")
     print('\n')
 
-    print("Username...")
-    u_name = input()
+    while True:
+        print("Username...")
+        u_name = input()
 
-    print("Password...")
-    p_word = input()
+        print("Password...")
+        p_word = input()
 
-    print('\n')
-    print("Login now")
+        print('\n')
+        print("Login now")
 
-    print('\n')
-    print("Username")
-    U_name = input()
+        print('\n')
+        print("Username")
+        U_name = input()
 
-    print("Password")
-    P_word = input()
+        print("Password")
+        P_word = input()
 
-    if U_name!=u_name and P_word != p_word:#error handling
-        print("Wrong username or password")
-    else:
-        print(f"{U_name}...{P_word}") 
+        if U_name!=u_name and P_word != p_word:#error handling
+            print("Wrong username or password. Reload page.")
+            print('\n')
+            break
+        else:
+            print(f"{U_name}...{P_word}") 
+            print('\n')
+            
 
-    print('\n')
     while True:
         print("Use these short codes:np- new password, gp-get password from us, del - delete password, dup-display passwords and accounts, ex-exit")
         short_codes=input().lower()
@@ -95,28 +123,24 @@ def main():
                 print('\n')
 
                 for user in display_user():
-                    print(f"{user.user_name} {credential.password}")
-                    print('\n')
+                    print(f"{user.user_name}")
+                    print('/n')
+                for credential in display_credential():
+                    print(f"{credential.password}")
+                    print('/n')
 
             else:
                 print('\n')
                 print("You don't seem to have any contacts")
                 print('\n')
+
+        elif short_codes =='ex':
+            print("Bye...")
+            break
+
+        else:
+            print("Please use the short codes.")
     
-
-    
-
-            
-        
-
-
-
-    
-
-
-
-    
-
 
 if __name__ == '__main__':
 
