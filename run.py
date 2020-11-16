@@ -3,10 +3,10 @@ from user import User
 from credential import Credential
 import random
 
-def create_user(user):
+def create_user(user_name):
     new_user = User(user_name)
     return new_user
-def create_credential(credential):
+def create_credential(password):
     new_credential = Credential(password)
     return new_credential
 
@@ -59,15 +59,15 @@ def main():
         print("-"*7)
 
         print("Account...")
-        a_name = input()
+        user_name = input()
 
         print("Password")
-        ps_word = input()
+        password = input()
 
-        save_users(create_user(a_name))
-        save_credential(create_credential(ps_word))
+        save_users(create_user(user_name))
+        save_credential(create_credential(password))
         print('\n')
-        print(f"New Password {ps_word} for {a_name} crated")
+        print(f"New Password {password} for {user_name} crated")
         print('\n')
 
     elif short_codes == 'gp':
@@ -75,16 +75,16 @@ def main():
         print("-"*7)
 
         print("Account...")
-        a_name = input()
+        user_name = input()
 
         print("Password")
         random_number= random.randint(0,5)
-        ps_word = random_number * 4
+        password = random_number, random_number, random_number, random_number
 
-        save_users(create_user(a_name))
-        save_credential(create_credential(ps_word))
+        save_users(create_user(user_name))
+        save_credential(create_credential(password))
         print('\n')
-        print(f"New Password {ps_word} for {a_name} crated")
+        print(f"Password {password} for {user_name} created")
         print('\n')
 
     
